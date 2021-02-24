@@ -8,7 +8,7 @@ import ProductList from './product-list.vue';
 const captains = console;
 
 export default {
-  name: 'Products',
+  name: 'My List',
   data() {
     return {
       productToDelete: null,
