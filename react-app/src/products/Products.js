@@ -75,7 +75,7 @@ function Products({ history }) {
   return (
     <div className="content-container">
       <ListHeader
-        title="My List"
+        title="Products"
         handleAdd={addNewProduct}
         handleRefresh={handleRefresh}
         routePath="/products"

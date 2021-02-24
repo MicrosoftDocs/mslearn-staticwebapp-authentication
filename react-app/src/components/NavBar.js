@@ -6,7 +6,7 @@ const NavBar = (props) => (
     <p className="menu-label">Menu</p>
     <ul className="menu-list">
       <NavLink to="/products" activeClassName="active-link">
-        My List
+        Products
       </NavLink>
       <NavLink to="/about" activeClassName="active-link">
         About
