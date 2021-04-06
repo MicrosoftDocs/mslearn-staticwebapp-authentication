@@ -1,11 +1,7 @@
 <script>
-  import { Router, Link, Route } from 'svelte-routing';
-  import { getContext } from 'svelte';
-  import { ROUTER } from 'svelte-routing/src/contexts';
+  import { Link } from 'svelte-routing';
 
-  const { activeRoute } = getContext(ROUTER);
-
-  function getProps({ location, href, isPartiallyCurrent, isCurrent }) {
+  function getProps({ href, isPartiallyCurrent, isCurrent }) {
     const isActive = href === '/' ? isCurrent : isPartiallyCurrent || isCurrent;
 
     // The object returned here is spread on the anchor element's attributes
@@ -16,10 +12,12 @@
   }
 </script>
 
-<nav class="column is-2 menu">
-  <p class="menu-label">Menu</p>
-  <ul class="menu-list">
-    <Link to="/products" {getProps}>Products</Link>
-    <Link to="/about" {getProps}>About</Link>
-  </ul>
-</nav>
+<div class="column is-2">
+  <nav class="menu">
+    <p class="menu-label">Menu</p>
+    <ul class="menu-list">
+      <Link to="/products" {getProps}>Products</Link>
+      <Link to="/about" {getProps}>About</Link>
+    </ul>
+  </nav>
+</div>
