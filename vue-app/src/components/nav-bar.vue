@@ -1,3 +1,12 @@
+<script>
+export default {
+  name: 'NavBar',
+  data() {
+    return {};
+  },
+  methods: {},
+};
+</script>
 <template>
   <nav class="column is-2 menu">
     <p class="menu-label">Menu</p>
