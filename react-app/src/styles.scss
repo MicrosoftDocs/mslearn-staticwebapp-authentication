@@ -7,6 +7,7 @@ $react-light: #61dafb;
 $primary: $react;
 $primary-light: $react-light;
 $link: $primary; // #00b3e6; // #ff4081;
+$light-gray: #777;
 
 $shade-light: #fafafa;
 
@@ -16,6 +17,18 @@ $shade-light: #fafafa;
 .menu-list .router-link-active {
   color: #fff;
   background-color: $link;
+}
+
+.menu.auth {
+  margin-top: 3em;
+}
+
+.user {
+  color: $light-gray;
+  margin-top: 2em;
+  padding-top: 1em;
+  padding-left: 0.25em;
+  border-top: 1px solid #999;
 }
 
 .not-found {
