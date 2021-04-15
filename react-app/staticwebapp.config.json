@@ -1,4 +1,22 @@
 {
+  "routes": [
+    {
+      "route": "/api/products",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/api/products/*",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/.auth/login/facebook",
+      "statusCode": "404"
+    },
+    {
+      "route": "/.auth/login/google",
+      "statusCode": "404"
+    }
+  ],
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": ["*.{css,scss,js,png,gif,ico,jpg,svg}"]
