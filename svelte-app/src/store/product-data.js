@@ -11,7 +11,8 @@ export async function getProductsAction() {
     store.getProducts(products);
     return products;
   } catch (error) {
-    return console.log(error);
+    console.log(error);
+    throw new Error(err);
   }
 }
 
