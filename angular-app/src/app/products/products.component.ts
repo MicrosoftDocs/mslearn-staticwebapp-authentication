@@ -17,6 +17,7 @@ import { ProductService } from './product.service';
           <app-product-list
             *ngIf="!selected"
             [products]="products"
+            [errorMessage]="errorMessage"
             (selected)="select($event)"
             (deleted)="askToDelete($event)"
           ></app-product-list>
@@ -40,6 +41,7 @@ import { ProductService } from './product.service';
   `,
 })
 export class ProductsComponent implements OnInit {
+  errorMessage: string;
   selected: Product;
   products$: Observable<Product[]>;
   message = '?';
@@ -88,8 +90,14 @@ export class ProductsComponent implements OnInit {
     this.selected = <any>{};
   }
 
-  getProducts() {
-    this.productService.getAll();
+  async getProducts() {
+    this.errorMessage = undefined;
+    this.productService.getAll().subscribe(
+      (_) => {
+        /*.. do nothing for success.. */
+      },
+      (error: any) => (this.errorMessage = error.error.statusText),
+    );
     this.clear();
   }
 

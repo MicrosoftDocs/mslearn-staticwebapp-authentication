@@ -10,7 +10,10 @@ import { Product } from '../core';
 @Component({
   selector: 'app-product-list',
   template: `
-    <div *ngIf="!products?.length">
+    <div *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="!products?.length && !errorMessage">
       Loading data ...
     </div>
     <ul class="list">
@@ -48,6 +51,7 @@ import { Product } from '../core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductListComponent {
+  @Input() errorMessage = undefined;
   @Input() products: Product[];
   @Output() deleted = new EventEmitter<Product>();
   @Output() selected = new EventEmitter<Product>();
