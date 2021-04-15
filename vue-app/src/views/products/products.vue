@@ -11,6 +11,7 @@ export default {
   name: 'Products',
   data() {
     return {
+      errorMessage: '',
       productToDelete: null,
       message: '',
       routePath: '/products',
@@ -25,8 +26,8 @@ export default {
     ProductDetail,
     Modal,
   },
-  created() {
-    this.getProductsAction();
+  async created() {
+    await this.getProducts();
   },
   computed: {
     ...mapGetters('products', { products: 'products' }),
@@ -65,8 +66,13 @@ export default {
     enableAddMode() {
       this.selected = {};
     },
-    getProducts() {
-      this.getProductsAction();
+    async getProducts() {
+      this.errorMessage = undefined;
+      try {
+        await this.getProductsAction();
+      } catch (error) {
+        this.errorMessage = 'Unauthorized';
+      }
       this.clear();
     },
     save(product) {
@@ -97,6 +103,7 @@ export default {
         <ProductList
           v-if="!selected"
           :products="products"
+          :errorMessage="errorMessage"
           @selected="select($event)"
           @deleted="askToDelete($event)"
         ></ProductList>

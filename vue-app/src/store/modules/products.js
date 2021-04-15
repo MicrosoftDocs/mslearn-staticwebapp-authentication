@@ -42,6 +42,7 @@ export default {
         return products;
       } catch (error) {
         captains.error(error);
+        throw new Error(error);
       }
     },
     async deleteProductAction({ commit }, product) {
