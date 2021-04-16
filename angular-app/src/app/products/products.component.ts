@@ -96,7 +96,7 @@ export class ProductsComponent implements OnInit {
       (_) => {
         /*.. do nothing for success.. */
       },
-      (error: any) => (this.errorMessage = error.error.statusText),
+      (error: any) => (this.errorMessage = 'Unauthorized'),
     );
     this.clear();
   }

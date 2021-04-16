@@ -27,7 +27,7 @@ export const productsReducer = (state = initState, action) => {
     case LOAD_PRODUCT_SUCCESS:
       return { ...state, loading: false, data: [...action.payload] };
     case LOAD_PRODUCT_ERROR:
-      return { ...state, loading: false, error: action.payload };
+      return { ...state, loading: false, error: 'Unauthorized' };
 
     case UPDATE_PRODUCT:
       return {
