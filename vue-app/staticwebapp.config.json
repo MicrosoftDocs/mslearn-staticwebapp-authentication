@@ -9,11 +9,7 @@
       "allowedRoles": ["authenticated"]
     },
     {
-      "route": "/.auth/login/facebook",
-      "statusCode": "404"
-    },
-    {
-      "route": "/.auth/login/google",
+      "route": "/.auth/login/aad",
       "statusCode": "404"
     }
   ],

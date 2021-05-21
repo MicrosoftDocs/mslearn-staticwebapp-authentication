@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import { Link } from 'svelte-routing';
 
-  const providers = ['twitter', 'github', 'aad', 'google', 'facebook'];
+  const providers = ['twitter', 'github', 'aad'];
   const redirect = window.location.pathname;
   let userInfo = undefined;
 
