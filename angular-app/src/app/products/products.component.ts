@@ -57,7 +57,7 @@ export class ProductsComponent implements OnInit {
   }
 
   add(product: Product) {
-    this.productService.add(product);
+    this.productService.add(product, {isOptimistic: false});
   }
 
   askToDelete(product: Product) {
